@@ -1,0 +1,8 @@
+#Input do código
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+#Calculo da diferença
+diferenca = a*b - c*d
+print(f'DIFERENCA = {diferenca}')
