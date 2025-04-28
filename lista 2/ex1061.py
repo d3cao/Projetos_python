@@ -1,17 +1,21 @@
-data_inicio = input().split()
-hora_inicio = input().split()
-data_termino = input().split()
-hora_termino = input().split()
+#pegando infos
+#primeiro dia :
+dia_inicio = int(input().split()[1])
+hh, mm, ss = map(int, input().split(':'))
 
-#Calculo do tempo do evento
-dias = (int(data_termino[1]) - int(data_inicio[1])) - 1
-horas = int(hora_termino[0]) + (24 - int(hora_inicio[0]))
-minutos = int(hora_termino[2]) + (60 - int(hora_inicio[2]))
-segundos = int(hora_termino[4]) + (60 - int(hora_inicio[4]))
+#ultimo dia : 
+dia_termino = int(input().split()[1])
+h, m, s = map(int, input().split(':'))
 
-print('{} dia(s)'.format(dias))
-print('{} hora(s)'.format(horas))
-print('{} minuto(s)'.format(minutos))
-print('{} segundo(s)'.format(segundos))
+#tempo total
+inicio = (dia_inicio*86400) + (hh*3600) + (mm*60) + ss
+fim = (dia_termino*86400) + (h*3600) + (m*60) + s
+total = fim - inicio
 
-print(data_inicio)
+print(f'{total//86400} dia(s)')
+total %= 86400
+print(f'{total//3600} hora(s)')
+total %= 3600
+print(f'{total//60} minuto(s)')
+total %= 60
+print(f'{total} segundo(s)')
